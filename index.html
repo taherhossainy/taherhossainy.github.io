@@ -3,117 +3,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. Taherul Islam | Electrical & Maintenance Engineer</title>
+
+    <title>MD. Taherul Islam | Electrical Engineer</title>
+
+    <meta name="description"
+          content="MD. Taherul Islam - Electrical Engineer with 8+ years of experience in industrial maintenance, electrical systems, troubleshooting and technical support.">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: #222;
-            background: #f5f7fa;
+            color: #1e293b;
+            background: #f8fafc;
         }
 
-        header {
-            background: #111827;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e2e8f0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f3d68;
+        }
+
+        .logo span {
+            color: #0ea5e9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0284c7;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(135deg, #0b2942 0%, #123f63 55%, #075985 100%);
             color: white;
-            padding: 70px 20px;
-            text-align: center;
         }
 
-        header h1 {
-            font-size: 42px;
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text small {
+            color: #7dd3fc;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: 54px;
+            line-height: 1.1;
+            margin: 18px 0;
+        }
+
+        .hero-text h1 span {
+            color: #7dd3fc;
+        }
+
+        .hero-text h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #e0f2fe;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: #dbeafe;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #082f49;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #bae6fd;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0c4a6e;
+        }
+
+        .profile-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-circle {
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, #38bdf8, white);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: white;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: #0284c7;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 8px;
+            color: #0f172a;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 12px auto;
+            color: #64748b;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 18px;
+            color: #0f3d68;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 18px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 28px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(15,23,42,0.06);
+        }
+
+        .stat-card strong {
+            display: block;
+            font-size: 30px;
+            color: #0284c7;
+        }
+
+        .stat-card span {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            background: #eef6fb;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 5px solid #0284c7;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(15,23,42,0.06);
+        }
+
+        .timeline-card h3 {
+            color: #0f3d68;
+            font-size: 22px;
+        }
+
+        .timeline-card h4 {
+            color: #0284c7;
+            margin: 5px 0 12px;
+        }
+
+        .timeline-card p {
+            color: #64748b;
+        }
+
+        .timeline-card ul {
+            margin: 15px 0 0 20px;
+            color: #475569;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15,23,42,0.09);
+        }
+
+        .skill-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+            color: #0f3d68;
+        }
+
+        .skill-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            background: #f1f5f9;
+        }
+
+        .education-card {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .education-card h3 {
+            color: #0f3d68;
+            font-size: 24px;
+        }
+
+        .education-card h4 {
+            color: #0284c7;
+            margin: 6px 0 12px;
+        }
+
+        .education-card p {
+            color: #64748b;
+        }
+
+        /* FOCUS */
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 22px;
+        }
+
+        .focus-card {
+            padding: 28px;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .focus-card h3 {
+            color: #0f3d68;
             margin-bottom: 10px;
         }
 
-        header p {
-            font-size: 20px;
-            color: #d1d5db;
+        .focus-card p {
+            color: #64748b;
         }
 
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
+        /* CONTACT */
 
-        nav a {
-            color: #111827;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        h2 {
-            font-size: 30px;
-            margin-bottom: 25px;
-            color: #111827;
-        }
-
-        .about {
-            background: white;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .skill {
-            background: #eef2ff;
-            padding: 18px;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #2563eb;
+        .contact {
+            background: #0b2942;
             color: white;
-            text-decoration: none;
-            border-radius: 6px;
         }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title p {
+            color: #cbd5e1;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.08);
+            padding: 15px 22px;
+            border-radius: 8px;
+            color: #e0f2fe;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #111827;
-            color: white;
+            background: #071d2e;
+            color: #94a3b8;
             text-align: center;
-            padding: 30px;
+            padding: 25px;
+            font-size: 14px;
         }
 
-        @media(max-width:600px) {
-            header h1 {
-                font-size: 30px;
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+                display: none;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about-grid,
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .profile-box {
+                order: -1;
+            }
+
+            .profile-circle {
+                width: 230px;
+                height: 230px;
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero-text h1 {
+                font-size: 35px;
+            }
+
+            .hero-text h2 {
+                font-size: 20px;
+            }
+
+            .skills-grid,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
             }
         }
     </style>
@@ -121,108 +510,517 @@
 
 <body>
 
-<header>
-    <h1>MD. Taherul Islam</h1>
-    <p>Electrical & Maintenance Engineer | Industrial Maintenance | Networking | Automation</p>
-</header>
+<!-- NAVIGATION -->
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            Taher<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
 </nav>
 
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <small>ELECTRICAL ENGINEER • INDUSTRIAL MAINTENANCE</small>
+
+            <h1>
+                MD. <span>Taherul Islam</span>
+            </h1>
+
+            <h2>
+                Electrical Engineer | Industrial Maintenance | Automation & Networking
+            </h2>
+
+            <p>
+                Electrical Engineering professional with 8+ years of experience
+                in industrial maintenance, electrical systems, troubleshooting,
+                preventive maintenance and technical support.
+            </p>
+
+            <div class="buttons">
+
+                <a href="CV.pdf" class="btn btn-primary" target="_blank">
+                    Download CV
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <div class="profile-circle">
+
+                <!-- Put your photo in repository as profile.jpg -->
+
+                <img src="profile.jpg"
+                     alt="MD. Taherul Islam">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
 <section id="about">
-    <h2>About Me</h2>
 
-    <div class="card">
-        <p>
-            I am an Electrical & Maintenance Engineer with 8 years of
-            professional experience in industrial maintenance, electrical
-            systems, troubleshooting and technical support.
-        </p>
+    <div class="container">
 
-        <p>
-            I have a B.Sc. in Electrical & Electronic Engineering (EEE)
-            and professional interests in networking, industrial automation,
-            PLC, HMI, SCADA and modern IT technologies.
-        </p>
+        <div class="section-title">
 
-        <a class="button" href="CV.pdf" target="_blank">
-            Download CV
-        </a>
+            <small>ABOUT ME</small>
+
+            <h2>Professional Profile</h2>
+
+            <p>
+                Engineering experience combined with continuous learning
+                in modern technology and automation.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h3>Engineering • Maintenance • Technology</h3>
+
+                <p>
+                    I am an Electrical & Electronic Engineering professional
+                    with practical experience in industrial maintenance,
+                    electrical systems, troubleshooting and technical support.
+                </p>
+
+                <p>
+                    My professional interests include industrial automation,
+                    PLC/HMI/SCADA, networking, IT infrastructure and modern
+                    engineering technologies.
+                </p>
+
+                <p>
+                    I believe in preventive maintenance, operational reliability,
+                    continuous improvement and learning new technologies.
+                </p>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <strong>8+</strong>
+                    <span>Years Experience</span>
+                </div>
+
+                <div class="stat-card">
+                    <strong>3.52</strong>
+                    <span>B.Sc. EEE CGPA</span>
+                </div>
+
+                <div class="stat-card">
+                    <strong>EEE</strong>
+                    <span>Engineering Background</span>
+                </div>
+
+                <div class="stat-card">
+                    <strong>Global</strong>
+                    <span>Career Focus</span>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
-<section id="experience">
-    <h2>Professional Experience</h2>
 
-    <div class="card">
-        <h3>Assistant Maintenance Engineer</h3>
-        <p><strong>Industrial Maintenance & Electrical Systems</strong></p>
-        <p>
-            Responsible for machine maintenance, troubleshooting,
-            preventive maintenance and ensuring smooth operation of
-            equipment.
-        </p>
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>EXPERIENCE</small>
+
+            <h2>Professional Experience</h2>
+
+            <p>
+                Practical experience in maintenance, troubleshooting
+                and technical operations.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-card">
+
+                <h3>Assistant Maintenance Engineer</h3>
+
+                <h4>Industrial Maintenance & Technical Operations</h4>
+
+                <p>
+                    Responsible for supporting smooth operation of machines
+                    and maintaining reliable technical infrastructure.
+                </p>
+
+                <ul>
+                    <li>Preventive maintenance and machine inspection</li>
+                    <li>Electrical troubleshooting and technical support</li>
+                    <li>Machine operational monitoring</li>
+                    <li>Coordination with machine operators</li>
+                    <li>Supporting reliable day-to-day operations</li>
+                </ul>
+
+            </div>
+
+
+            <div class="timeline-card">
+
+                <h3>Technical Support</h3>
+
+                <h4>Tiger IT Bangladesh Ltd.</h4>
+
+                <p>
+                    Experience in technical support and operational technology
+                    environments, including project-based technical services.
+                </p>
+
+                <ul>
+                    <li>Technical troubleshooting</li>
+                    <li>System and equipment support</li>
+                    <li>Operational issue resolution</li>
+                    <li>Technical coordination</li>
+                </ul>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="card">
-        <h3>Technical Support</h3>
-        <p>
-            Experience in technical support, troubleshooting and
-            IT-related operational activities.
-        </p>
-    </div>
 </section>
 
-<section id="education">
-    <h2>Education</h2>
 
-    <div class="card">
-        <h3>B.Sc. in Electrical & Electronic Engineering</h3>
-        <p>Daffodil International University</p>
-        <p>CGPA: 3.52</p>
-    </div>
-</section>
+<!-- SKILLS -->
 
 <section id="skills">
-    <h2>Skills & Expertise</h2>
 
-    <div class="skills">
-        <div class="skill">Electrical Maintenance</div>
-        <div class="skill">Industrial Maintenance</div>
-        <div class="skill">Troubleshooting</div>
-        <div class="skill">Preventive Maintenance</div>
-        <div class="skill">Networking</div>
-        <div class="skill">CCNA</div>
-        <div class="skill">Industrial Automation</div>
-        <div class="skill">PLC / HMI / SCADA</div>
-        <div class="skill">Technical Support</div>
-        <div class="skill">IT Infrastructure</div>
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>TECHNICAL SKILLS</small>
+
+            <h2>What I Work With</h2>
+
+            <p>
+                Core technical areas and professional interests.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">⚡</div>
+
+                <h3>Electrical Engineering</h3>
+
+                <p>
+                    Electrical systems, equipment maintenance,
+                    troubleshooting and operational support.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🔧</div>
+
+                <h3>Industrial Maintenance</h3>
+
+                <p>
+                    Preventive maintenance, machine inspection,
+                    fault identification and maintenance planning.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🤖</div>
+
+                <h3>PLC / HMI / SCADA</h3>
+
+                <p>
+                    Industrial automation technologies and
+                    automation system learning.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🌐</div>
+
+                <h3>Networking</h3>
+
+                <p>
+                    Networking fundamentals and professional
+                    development toward CCNA-level knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">💻</div>
+
+                <h3>IT Infrastructure</h3>
+
+                <p>
+                    Computer systems, technical support,
+                    operational infrastructure and troubleshooting.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📈</div>
+
+                <h3>Continuous Improvement</h3>
+
+                <p>
+                    Focused on reliability, efficiency,
+                    learning and modern engineering technologies.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
-<section id="contact">
-    <h2>Contact Me</h2>
 
-    <div class="card">
-        <p><strong>Email:</strong> Your Email Address</p>
-        <p><strong>Location:</strong> Dhaka, Bangladesh</p>
+<!-- EDUCATION -->
 
-        <a class="button"
-           href="https://www.linkedin.com/"
-           target="_blank">
-            LinkedIn Profile
-        </a>
+<section class="education" id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>EDUCATION</small>
+
+            <h2>Academic Background</h2>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Science in Electrical & Electronic Engineering
+            </h3>
+
+            <h4>
+                Daffodil International University
+            </h4>
+
+            <p>
+                CGPA: <strong>3.52 / 4.00</strong>
+            </p>
+
+            <p>
+                Academic foundation in electrical and electronic engineering
+                with professional experience in industrial maintenance
+                and technical operations.
+            </p>
+
+        </div>
+
     </div>
+
 </section>
+
+
+<!-- ENGINEERING FOCUS -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>ENGINEERING FOCUS</small>
+
+            <h2>Areas of Interest</h2>
+
+        </div>
+
+
+        <div class="focus-grid">
+
+            <div class="focus-card">
+
+                <h3>Industrial Automation</h3>
+
+                <p>
+                    PLC, HMI, SCADA, industrial control systems
+                    and automation technologies.
+                </p>
+
+            </div>
+
+
+            <div class="focus-card">
+
+                <h3>Electrical Systems</h3>
+
+                <p>
+                    Electrical equipment, preventive maintenance,
+                    troubleshooting and reliability.
+                </p>
+
+            </div>
+
+
+            <div class="focus-card">
+
+                <h3>Networking & IT</h3>
+
+                <p>
+                    Computer networking, infrastructure and
+                    technical support technologies.
+                </p>
+
+            </div>
+
+
+            <div class="focus-card">
+
+                <h3>Global Engineering Career</h3>
+
+                <p>
+                    Continuously developing technical skills for
+                    international engineering opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>CONTACT</small>
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                For professional opportunities, engineering collaboration
+                and technical discussions.
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+                    📍 Dhaka, Bangladesh
+                </div>
+
+                <div class="contact-item">
+                    ⚡ Electrical Engineer
+                </div>
+
+                <div class="contact-item">
+                    🌐 Open to Global Opportunities
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 MD. Taherul Islam. All Rights Reserved.</p>
+
+    <p>
+        © 2026 <strong>MD. Taherul Islam</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Electrical Engineering • Industrial Maintenance • Automation • Networking
+    </p>
+
 </footer>
+
 
 </body>
 </html>
