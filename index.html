@@ -425,46 +425,200 @@
 
         /* ================= EDUCATION ================= */
 
-        .education-card {
-            max-width: 800px;
-            margin: auto;
+      /* ================= MODERN EDUCATION ================= */
 
-            background: linear-gradient(135deg, #0d1d30, #10263e);
+#education {
+    background: #07111f;
+}
 
-            border-radius: 18px;
-            padding: 35px;
+.education-timeline {
+    position: relative;
+    max-width: 950px;
+    margin: 55px auto 0;
+    padding: 0 10px;
+}
 
-            border: 1px solid rgba(77,184,255,0.12);
-        }
+.education-timeline::before {
+    content: "";
+    position: absolute;
+    left: 92px;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        #168eea,
+        rgba(22,142,234,0.15)
+    );
+}
 
-        .education-card h3 {
-            font-size: 24px;
-            color: #ffffff;
-        }
+.education-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 45px;
+    margin-bottom: 35px;
+}
 
-        .education-card h4 {
-            color: #4db8ff;
-            margin: 8px 0;
-        }
+.education-year {
+    position: relative;
+    z-index: 2;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .education-card p {
-            color: #a3b5c8;
-        }
+    border-radius: 50%;
 
-        .cgpa {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 8px 15px;
+    background: #0d1d30;
+    border: 2px solid #168eea;
 
-            border-radius: 50%;
+    color: #4db8ff;
+    font-size: 15px;
+    font-weight: 700;
 
-            background: rgba(77,184,255,0.10);
+    box-shadow:
+        0 0 0 7px #07111f,
+        0 0 25px rgba(22,142,234,0.18);
+}
 
-            color: #4db8ff;
+.education-card {
+    display: flex;
+    gap: 22px;
 
-            font-weight: bold;
-        }
+    padding: 30px;
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,29,48,0.98),
+            rgba(9,24,40,0.98)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(77,184,255,0.55);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.25),
+        0 0 25px rgba(22,142,234,0.08);
+}
+
+.education-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(22,142,234,0.12);
+
+    font-size: 24px;
+}
+
+.education-content {
+    flex: 1;
+}
+
+.education-content h3 {
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.education-content h4 {
+    margin-bottom: 9px;
+
+    color: #4db8ff;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.education-content p {
+    margin-bottom: 16px;
+
+    color: #9fb2c9;
+
+    font-size: 14px;
+}
+
+.education-result {
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border-radius: 7px;
+
+    background: rgba(22,142,234,0.12);
+
+    color: #4db8ff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .education-timeline {
+        padding: 0;
+    }
+
+    .education-timeline::before {
+        left: 25px;
+    }
+
+    .education-item {
+        grid-template-columns: 50px 1fr;
+        gap: 20px;
+    }
+
+    .education-year {
+        width: 50px;
+        height: 50px;
+
+        font-size: 12px;
+    }
+
+    .education-card {
+        padding: 22px;
+        gap: 15px;
+    }
+
+    .education-icon {
+        display: none;
+    }
+
+    .education-content h3 {
+        font-size: 17px;
+    }
+
+    .education-content h4 {
+        font-size: 14px;
+    }
+}
 
         /* ================= ENGINEERING FOCUS ================= */
 
