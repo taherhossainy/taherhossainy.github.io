@@ -316,72 +316,250 @@
 
         /* ================= EXPERIENCE ================= */
 
-        .timeline {
-            position: relative;
-            max-width: 850px;
-            margin: auto;
-        }
+/* ================= MODERN EXPERIENCE ================= */
 
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #18547c;
-        }
+#experience {
+    background: #07111f;
+}
 
-        .timeline-item {
-            position: relative;
-            padding-left: 65px;
-            margin-bottom: 40px;
-        }
+.experience-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    padding-left: 55px;
+}
 
-        .timeline-dot {
-            position: absolute;
-            left: 11px;
-            top: 5px;
+.experience-timeline::before {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
 
-            width: 20px;
-            height: 20px;
+    background: linear-gradient(
+        to bottom,
+        #168eea,
+        rgba(22,142,234,0.12)
+    );
+}
 
-            border-radius: 50%;
+.experience-item {
+    position: relative;
+    margin-bottom: 35px;
+}
 
-            background: #168eea;
+.experience-marker {
+    position: absolute;
+    left: -55px;
+    top: 32px;
 
-            border: 4px solid #07111f;
+    width: 36px;
+    height: 36px;
 
-            box-shadow: 0 0 0 3px #168eea;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .timeline-card {
-            background: #0d1d30;
-            padding: 28px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.07);
-        }
+    border-radius: 50%;
 
-        .timeline-card h3 {
-            color: #ffffff;
-            font-size: 21px;
-        }
+    background: #07111f;
+    border: 2px solid #168eea;
 
-        .timeline-card h4 {
-            color: #4db8ff;
-            margin: 5px 0 15px;
-            font-weight: normal;
-        }
+    box-shadow:
+        0 0 0 6px #07111f,
+        0 0 20px rgba(22,142,234,0.25);
 
-        .timeline-card p,
-        .timeline-card li {
-            color: #9fb2c9;
-        }
+    z-index: 2;
+}
 
-        .timeline-card ul {
-            padding-left: 20px;
-        }
+.experience-marker span {
+    width: 10px;
+    height: 10px;
 
+    border-radius: 50%;
+
+    background: #4db8ff;
+}
+
+.experience-card {
+    padding: 30px 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,29,48,0.98),
+            rgba(9,24,40,0.98)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(77,184,255,0.55);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.25),
+        0 0 25px rgba(22,142,234,0.08);
+}
+
+.experience-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.experience-top h3 {
+    margin: 8px 0 7px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    line-height: 1.35;
+}
+
+.experience-top h4 {
+    color: #4db8ff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+.experience-current {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(22,142,234,0.15);
+
+    color: #4db8ff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+}
+
+.experience-date {
+    flex-shrink: 0;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    background: rgba(255,255,255,0.05);
+
+    color: #b9c9dc;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.experience-location {
+    margin: 16px 0;
+
+    color: #8197ae;
+
+    font-size: 13px;
+}
+
+.experience-card ul {
+    margin: 0 0 20px;
+    padding-left: 20px;
+}
+
+.experience-card li {
+    margin-bottom: 9px;
+
+    color: #9fb2c9;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.experience-card li::marker {
+    color: #168eea;
+}
+
+.experience-tag {
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border-radius: 7px;
+
+    background: rgba(22,142,234,0.10);
+
+    color: #4db8ff;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ================= EXPERIENCE MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .experience-timeline {
+        padding-left: 38px;
+        margin-top: 45px;
+    }
+
+    .experience-timeline::before {
+        left: 10px;
+    }
+
+    .experience-marker {
+        left: -38px;
+
+        width: 28px;
+        height: 28px;
+    }
+
+    .experience-marker span {
+        width: 8px;
+        height: 8px;
+    }
+
+    .experience-card {
+        padding: 22px;
+    }
+
+    .experience-top {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .experience-top h3 {
+        font-size: 18px;
+    }
+
+    .experience-top h4 {
+        font-size: 14px;
+    }
+
+    .experience-date {
+        white-space: normal;
+    }
+
+}
 
         /* ================= SKILLS ================= */
 
@@ -1053,104 +1231,266 @@
 
 <!-- ================= EXPERIENCE ================= -->
 
+<!-- ================= EXPERIENCE ================= -->
+
 <section id="experience">
 
     <div class="container">
 
         <div class="section-title">
-
-            <small>Career Journey</small>
-
+            <small>CAREER JOURNEY</small>
             <h2>Professional Experience</h2>
-
             <p>
-                Practical experience in maintenance, technical support
-                and engineering operations.
+                More than 8 years of experience in maintenance,
+                troubleshooting, technical support and engineering operations.
             </p>
-
         </div>
 
+        <div class="experience-timeline">
 
-        <div class="timeline">
+            <!-- ProAms -->
+            <div class="experience-item">
 
+                <div class="experience-marker">
+                    <span></span>
+                </div>
 
-            <div class="timeline-item">
+                <div class="experience-card">
 
-                <div class="timeline-dot"></div>
+                    <div class="experience-top">
 
-                <div class="timeline-card">
+                        <div>
+                            <span class="experience-current">
+                                CURRENT ROLE
+                            </span>
 
-                    <h3>Assistant Maintenance Engineer</h3>
+                            <h3>
+                                Assistant Maintenance Engineer
+                            </h3>
 
-                    <h4>Industrial Maintenance & Technical Operations</h4>
+                            <h4>
+                                ProAms Business Consultant
+                            </h4>
+                        </div>
 
-                    <p>
-                        Responsible for maintaining machines and supporting
-                        smooth day-to-day technical operations.
+                        <div class="experience-date">
+                            Sep 2024 – Present
+                        </div>
+
+                    </div>
+
+                    <p class="experience-location">
+                        📍 Gulshan, Dhaka
                     </p>
 
-                    <br>
-
                     <ul>
+                        <li>
+                            Perform preventive maintenance and troubleshoot
+                            printing/data-card machines.
+                        </li>
 
-                        <li>Preventive maintenance of machines</li>
+                        <li>
+                            Diagnose equipment faults and respond to
+                            operational issues.
+                        </li>
 
-                        <li>Electrical troubleshooting</li>
-
-                        <li>Machine operation support</li>
-
-                        <li>Technical problem identification</li>
-
-                        <li>Maintenance coordination</li>
-
+                        <li>
+                            Support control-room printing operations and
+                            equipment reliability.
+                        </li>
                     </ul>
+
+                    <span class="experience-tag">
+                        Maintenance & Troubleshooting
+                    </span>
 
                 </div>
 
             </div>
 
 
-            <div class="timeline-item">
+            <!-- WEDO -->
+            <div class="experience-item">
 
-                <div class="timeline-dot"></div>
+                <div class="experience-marker">
+                    <span></span>
+                </div>
 
-                <div class="timeline-card">
+                <div class="experience-card">
 
-                    <h3>Technical Support</h3>
+                    <div class="experience-top">
 
-                    <h4>Tiger IT Bangladesh Ltd.</h4>
+                        <div>
 
-                    <p>
-                        Experience in technical support and IT-related
-                        operational activities, including troubleshooting
-                        and technical assistance.
+                            <h3>
+                                Assistant Maintenance Engineer
+                            </h3>
+
+                            <h4>
+                                Women's Environment and Development
+                                Organization (WEDO)
+                            </h4>
+
+                        </div>
+
+                        <div class="experience-date">
+                            Nov 2018 – Aug 2024
+                        </div>
+
+                    </div>
+
+                    <p class="experience-location">
+                        📍 Agargaon, Dhaka
                     </p>
 
-                    <br>
-
                     <ul>
+                        <li>
+                            Performed preventive and corrective maintenance
+                            of printing/data-card machines.
+                        </li>
 
-                        <li>Technical support</li>
+                        <li>
+                            Diagnosed equipment faults and restored
+                            machine operations.
+                        </li>
 
-                        <li>System troubleshooting</li>
-
-                        <li>Operational support</li>
-
-                        <li>IT equipment support</li>
-
+                        <li>
+                            Executed scheduled maintenance and supported
+                            technical operations.
+                        </li>
                     </ul>
+
+                    <span class="experience-tag">
+                        Maintenance
+                    </span>
 
                 </div>
 
             </div>
 
+
+            <!-- Tiger IT -->
+            <div class="experience-item">
+
+                <div class="experience-marker">
+                    <span></span>
+                </div>
+
+                <div class="experience-card">
+
+                    <div class="experience-top">
+
+                        <div>
+
+                            <h3>
+                                Junior Assistant Maintenance Engineer
+                            </h3>
+
+                            <h4>
+                                Tiger IT Bangladesh Ltd.
+                            </h4>
+
+                        </div>
+
+                        <div class="experience-date">
+                            Nov 2015 – Oct 2018
+                        </div>
+
+                    </div>
+
+                    <p class="experience-location">
+                        📍 Banani, Dhaka
+                    </p>
+
+                    <ul>
+                        <li>
+                            Diagnosed equipment faults and implemented
+                            maintenance solutions.
+                        </li>
+
+                        <li>
+                            Installed and configured laser, OA and other
+                            machine components.
+                        </li>
+
+                        <li>
+                            Tested equipment performance and ensured
+                            reliable operation.
+                        </li>
+                    </ul>
+
+                    <span class="experience-tag">
+                        Maintenance & Technical Support
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAST -->
+            <div class="experience-item">
+
+                <div class="experience-marker">
+                    <span></span>
+                </div>
+
+                <div class="experience-card">
+
+                    <div class="experience-top">
+
+                        <div>
+
+                            <h3>
+                                Printing Specialist
+                            </h3>
+
+                            <h4>
+                                MAST Packaging & Paper Converting Ltd.
+                            </h4>
+
+                        </div>
+
+                        <div class="experience-date">
+                            Mar 2015 – Nov 2015
+                        </div>
+
+                    </div>
+
+                    <p class="experience-location">
+                        📍 Jatrabari, Dhaka
+                    </p>
+
+                    <ul>
+                        <li>
+                            Monitored electrical parameters and equipment
+                            temperature.
+                        </li>
+
+                        <li>
+                            Performed preventive electrical maintenance
+                            and routine inspections.
+                        </li>
+
+                        <li>
+                            Supported calibration and field-instrument
+                            supervision.
+                        </li>
+                    </ul>
+
+                    <span class="experience-tag">
+                        Production & Electrical Maintenance
+                    </span>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
 </section>
-
 
 <!-- ================= CERTIFICATIONS ================= -->
 
