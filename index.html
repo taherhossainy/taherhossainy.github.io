@@ -1145,6 +1145,224 @@
     transform: translateY(-7px);
     border-color: #168eea;
 }
+        /* ================= CERTIFICATIONS ================= */
+
+#certifications {
+    background: #07111f;
+}
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1050px;
+    margin: 55px auto 0;
+}
+
+.certification-card {
+    position: relative;
+    padding: 30px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,29,48,0.98),
+            rgba(9,24,40,0.98)
+        );
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.certification-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #168eea;
+    opacity: 0.8;
+}
+
+.certification-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(77,184,255,0.55);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.28),
+        0 0 28px rgba(22,142,234,0.10);
+}
+
+
+/* TOP AREA */
+
+.certification-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.certification-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(22,142,234,0.12);
+    border: 1px solid rgba(77,184,255,0.12);
+
+    font-size: 28px;
+
+    transition: 0.3s ease;
+}
+
+.certification-card:hover .certification-icon {
+    transform: scale(1.08);
+}
+
+
+/* STATUS */
+
+.certification-status {
+    display: inline-block;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.certification-status.learning {
+    background: rgba(22,142,234,0.13);
+    border: 1px solid rgba(77,184,255,0.18);
+    color: #4db8ff;
+}
+
+.certification-status.development {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.09);
+    color: #b9c9dc;
+}
+
+
+/* CONTENT */
+
+.certification-content {
+    min-height: 185px;
+}
+
+.certification-category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #4db8ff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.certification-content h3 {
+    margin-bottom: 12px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.certification-content p {
+    color: #9fb2c9;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* FOOTER */
+
+.certification-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 20px;
+    padding-top: 17px;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+
+    color: #8197ae;
+
+    font-size: 12px;
+}
+
+.certification-footer span:last-child {
+    color: #4db8ff;
+    font-weight: 600;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .certification-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .certification-card {
+        padding: 23px;
+    }
+
+    .certification-top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .certification-content {
+        min-height: auto;
+    }
+
+    .certification-content h3 {
+        font-size: 18px;
+    }
+
+    .certification-content p {
+        font-size: 13px;
+    }
+
+    .certification-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+}
     </style>
 
 </head>
@@ -1633,63 +1851,128 @@
 
 <!-- ================= CERTIFICATIONS ================= -->
 
-<section class="skills" id="certifications">
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications">
 
     <div class="container">
 
         <div class="section-title">
 
-            <small>Professional Development</small>
+            <small>PROFESSIONAL DEVELOPMENT</small>
 
             <h2>Certifications & Learning</h2>
 
             <p>
-                Professional certifications and technical areas I am
-                developing to strengthen my engineering career.
+                Professional certifications and ongoing technical
+                development focused on networking, engineering and
+                modern technology.
             </p>
 
         </div>
 
 
-        <div class="skills-grid">
+        <div class="certification-grid">
 
 
-            <div class="skill-card">
+            <!-- CCNA -->
 
-                <div class="skill-icon">🌐</div>
+            <div class="certification-card">
 
-                <h3>
-                    CCNA – Cisco Certified Network Associate
-                </h3>
+                <div class="certification-top">
 
-                <p>
-                    Currently developing knowledge in networking,
-                    routing, switching and network infrastructure.
-                </p>
+                    <div class="certification-icon">
+                        🌐
+                    </div>
 
-                <span class="cgpa">
-                    Currently Learning
-                </span>
+                    <span class="certification-status learning">
+                        Currently Learning
+                    </span>
+
+                </div>
+
+
+                <div class="certification-content">
+
+                    <span class="certification-category">
+                        NETWORKING
+                    </span>
+
+                    <h3>
+                        CCNA – Cisco Certified Network Associate
+                    </h3>
+
+                    <p>
+                        Developing practical knowledge in networking,
+                        routing, switching and network infrastructure
+                        with a focus on professional IT networking.
+                    </p>
+
+                </div>
+
+
+                <div class="certification-footer">
+
+                    <span>
+                        Cisco Networking
+                    </span>
+
+                    <span>
+                        In Progress
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <div class="skill-card">
+            <!-- INDUSTRIAL AUTOMATION -->
 
-                <div class="skill-icon">⚙️</div>
+            <div class="certification-card">
 
-                <h3>
-                    Industrial Automation
-                </h3>
+                <div class="certification-top">
 
-                <p>
-                    Building skills in industrial control systems,
-                    machine automation and process improvement.
-                </p>
+                    <div class="certification-icon">
+                        ⚙️
+                    </div>
 
-                <span class="cgpa">
-                    Professional Development
-                </span>
+                    <span class="certification-status development">
+                        Professional Development
+                    </span>
+
+                </div>
+
+
+                <div class="certification-content">
+
+                    <span class="certification-category">
+                        AUTOMATION
+                    </span>
+
+                    <h3>
+                        Industrial Automation
+                    </h3>
+
+                    <p>
+                        Developing knowledge in industrial automation,
+                        control systems, machine technologies and
+                        modern engineering practices.
+                    </p>
+
+                </div>
+
+
+                <div class="certification-footer">
+
+                    <span>
+                        Engineering Technology
+                    </span>
+
+                    <span>
+                        Developing
+                    </span>
+
+                </div>
 
             </div>
 
@@ -1699,7 +1982,6 @@
     </div>
 
 </section>
-
 
 <!-- ================= SKILLS ================= -->
 <!-- ================= SKILLS ================= -->
