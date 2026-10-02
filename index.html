@@ -198,12 +198,12 @@
 
         /* ================= PROFILE IMAGE ================= */
 
-        .profile-box {
-            display: flex;
-            justify-content: center;
-        }
+     .profile-box {
+    display: flex;
+    justify-content: center;
+}
 
-        .profile-wrapper {
+.profile-wrapper {
     width: 320px;
     height: 320px;
     padding: 8px;
@@ -212,20 +212,16 @@
     background: linear-gradient(145deg, #168eea, #0a2944);
 
     box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+    overflow: hidden;
 }
 
-            background: linear-gradient(145deg, #168eea, #0a2944);
-
-            box-shadow: 0 25px 70px rgba(0,0,0,0.45);
-        }
-
-        .profile-wrapper img {
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-            object-fit: contain;
-            background: #0b1828;
-        }
+.profile-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
 
 
         /* ================= SECTION TITLE ================= */
